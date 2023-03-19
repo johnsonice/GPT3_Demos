@@ -28,6 +28,7 @@ def to_jsonl(fn,data,mode='w'):
             outfile.write('\n')
 
 
+
 def flatten_list(list_of_lists):
     '''
     list_of_lists : TYPE
