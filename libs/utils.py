@@ -1,7 +1,7 @@
 import json
 import itertools
 import pandas as pd
-import pathlib,os
+import pathlib,os,re
 import logging 
 import datetime 
 from functools import wraps
@@ -141,6 +141,19 @@ def exception_handler(error_msg='error handleing triggered',
     
     return outter_func
 
+def extract_json_string(text):
+    """
+    Extracts the string between ```json and ``` using regular expressions.
+    Parameters:
+    text (str): The text from which to extract the string.
+    Returns:
+    str: The extracted string, or an empty string if no match is found.
+    """
+    # Regular expression to extract text between ```json and ```
+    match = re.search(r'```json\s+(.*?)\s+```', text, re.DOTALL)
+
+    # Return the extracted text if a match is found, otherwise return an empty string
+    return match.group(1) if match else ""
 
 if __name__ == "__main__":
     

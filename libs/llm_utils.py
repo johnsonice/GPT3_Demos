@@ -3,7 +3,7 @@
 #%%
 import tiktoken
 tokenizer = tiktoken.encoding_for_model("gpt-3.5-turbo")
-import os, json
+import os, json, re
 import openai
 try:
     from openai import OpenAI
@@ -164,7 +164,7 @@ class BSAgent():
         return res_msg
     
     @staticmethod
-    def extract_json_string(self,text):
+    def extract_json_string(text):
         """
         Extracts the string between ```json and ``` using regular expressions.
         Parameters:
