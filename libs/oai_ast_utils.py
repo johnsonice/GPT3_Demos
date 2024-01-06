@@ -233,7 +233,7 @@ class OpenAIAssistant_Base():
         start_time = time.time()
         while True:
             time.sleep(1)
-            run = OAI_Agent.client.beta.threads.runs.retrieve(thread_id=initial_run.thread_id, run_id=initial_run.id)
+            run = self.client.beta.threads.runs.retrieve(thread_id=initial_run.thread_id, run_id=initial_run.id)
             elapsed_time = time.time() - start_time
             print(f"\rElapsed time: {elapsed_time:.2f} s || Status: {run.status}    ", end="", flush=True)
             if run.status in ['completed', 'failed', 'requires_action']:
@@ -263,7 +263,7 @@ class OpenAIAssistant_Base():
         post_run = self._get_finished_run(init_run)
         res = self._parse_return_message(post_run)
         
-        return res
+        return res,post_run.status
     
     def quick_query_and_parse(self,**kwargs):
         
