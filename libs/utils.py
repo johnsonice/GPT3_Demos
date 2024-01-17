@@ -149,11 +149,38 @@ def extract_json_string(text):
     Returns:
     str: The extracted string, or an empty string if no match is found.
     """
+    
+    if not isinstance(text, str):
+        raise ValueError("Input must be a string")
+    
     # Regular expression to extract text between ```json and ```
     match = re.search(r'```json\s+(.*?)\s+```', text, re.DOTALL)
 
     # Return the extracted text if a match is found, otherwise return an empty string
-    return match.group(1) if match else ""
+    return match.group(1).strip() if match else ""
+
+
+def parse_list_string(res_str):
+    """
+    Extracts numbered list items from a string.
+
+    Each item is expected to start with a number followed by a parenthesis,
+    e.g., "1) Item". Items are separated by new lines.
+
+    Parameters:
+    res_str (str): A string containing the numbered list items.
+
+    Returns:
+    list: A list of extracted items, with leading and trailing whitespace removed.
+    """
+    if not isinstance(res_str, str):
+        raise ValueError("Input must be a string")
+    # Compile the regular expression for efficiency if used multiple times
+    pattern = r"\d+\)(.*?)(?=\n\d+\)|$)"
+    # Find all matches and strip whitespace from each item
+    items = [item.strip() for item in re.findall(pattern, res_str,re.DOTALL)]
+    return items 
+
 
 if __name__ == "__main__":
     
