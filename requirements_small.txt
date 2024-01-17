@@ -1,0 +1,16 @@
+opencv-python-headless
+openai
+streamlit
+chromadb
+langchain
+tiktoken
+llama-index
+Cython
+unstructured
+unstructured[all-docs]
+pdf2image
+pdfminer.six
+docx2python
+#docx2txt
+# opencv issues 
+# https://github.com/ultralytics/ultralytics/issues/1270

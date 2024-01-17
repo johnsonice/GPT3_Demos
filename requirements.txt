@@ -1,16 +1,15 @@
-opencv-python-headless
-openai
+docx==0.2.4
+langchain==0.1.1
+matplotlib==3.7.2
+numpy==1.24.3
+openai==1.8.0
+pandas==2.0.3
+scikit_learn==1.3.0
+spacy==3.7.2
+streamlit==1.30.0
+tiktoken==0.5.2
+transformers==4.32.1
 streamlit
 chromadb
-langchain
-tiktoken
 llama-index
-Cython
-unstructured
-unstructured[all-docs]
-pdf2image
-pdfminer.six
-docx2python
-#docx2txt
-# opencv issues 
-# https://github.com/ultralytics/ultralytics/issues/1270
+pipregs
