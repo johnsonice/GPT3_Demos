@@ -11,5 +11,6 @@ tiktoken==0.5.2
 transformers==4.32.1
 streamlit
 chromadb
+llmsherpa
 llama-index
-pipregs
+#pipregs
