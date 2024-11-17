@@ -17,4 +17,5 @@ llama-index-core
 llama-index-llms-openai 
 llama-index-utils-workflow
 llama-parse
+marker-pdf
 #pipregs
