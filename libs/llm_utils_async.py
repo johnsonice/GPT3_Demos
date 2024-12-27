@@ -1,6 +1,10 @@
 """
 LLM utilities for OpenAI API interactions.
 Provides token counting, cost calculation, and API interaction utilities.
+
+some references:
+https://medium.com/@Aman-tech/how-make-async-calls-to-openais-api-cfc35f252ebd
+
 """
 
 #%%
